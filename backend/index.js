@@ -16,7 +16,20 @@ app.get("/", (req, res) => {
   res.send("Cybersecurity Incident Tracker API is running");
 });
 
+// Connect Backend server to MongoDB
+const startServer = async () => {
+  await connectDB();
+
+  app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+  });
+};
+
+startServer();
+
+// Replaced by aboved MongoDB connection
+// startServer();
 // Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+// app.listen(PORT, () => {
+  // console.log(`Server is running on http://localhost:${PORT}`);
+// });
