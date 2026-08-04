@@ -7,8 +7,8 @@ dotenv.config();
 // Create the Express application
 const app = express();
 
-// The port where the backend server will run
-const PORT = 3000;
+// Use the port variable from .env
+const PORT = process.env.PORT;
 
 // Test route for the backend
 app.get("/", (req, res) => {
