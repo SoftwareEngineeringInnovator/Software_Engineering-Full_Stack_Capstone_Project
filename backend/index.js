@@ -1,4 +1,8 @@
+import dotenv from "dotenv";
 import express from "express";
+
+// Load the environment variables from the .env file
+dotenv.config();
 
 // Create the Express application
 const app = express();
