@@ -18,6 +18,35 @@ router.get("/", async (req, res) => {
     }
 });
 
+// GET route /api/incidents/:id - retrieve incident using its MongoDB ID
+router.get("/:id", async (req, res) => {
+  try {
+    const incident = await Incident.findById(req.params.id);
+
+    // Message if the ID is not found
+    if (!incident) {
+      return res.status(404).json({
+        message: "Incident not found",
+      });
+    }
+
+    res.status(200).json(incident);
+  } catch (error) {
+
+    // Return a 400 response when ID format is invalid
+    if (error.name === "CastError") {
+      return res.status(400).json({
+        message: "Invalid incident ID",
+      });
+    }
+
+    res.status(500).json({
+      message: "Unable to retrieve incident",
+      error: error.message,
+    });
+  }
+});
+
 // POST route /api/incidents - create an incident in MongoDB
 router.post("/", async (req, res) => {
     try {
