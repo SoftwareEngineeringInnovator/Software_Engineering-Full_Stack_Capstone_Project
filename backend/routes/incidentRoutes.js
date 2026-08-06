@@ -32,10 +32,52 @@ router.post("/", async (req, res) => {
                 error: error.message,
             });
         }
-        
+
         // Display error message 
         res.status(500).json({
             message: "Unable to create incident",
+            error: error.message,
+        });
+    }
+});
+
+// PUT route /api/incidents/:id - update incidents in MongoDB
+router.put("/:id", async (req, res) => {
+    try {
+
+        const updatedIncident = await Incident.findByIdAndUpdate(
+            // Gets incident ID
+            req.params.id,
+            // Contains updated information
+            req.body,
+            {
+                // Returns updated document
+                new: true,
+                // Validates the schema input
+                runValidators: true,
+            }
+        );
+        
+        // Message for ID not found
+        if (!updatedIncident) {
+            return res.status(404).json({
+                message: "Incident not found",
+            });
+        }
+
+        res.status(200).json(updatedIncident);
+    } catch (error) {
+        // Message for validation error
+        if (error.name === "ValidationError") {
+            return res.status(400).json({
+                message: "Incident validation failed",
+                error: error.message,
+            });
+        }
+
+        // Message for unable to update the incident
+        res.status(500).json({
+            message: "Unable to update incident",
             error: error.message,
         });
     }
