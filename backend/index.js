@@ -12,6 +12,9 @@ const app = express();
 // Read JSON data from the incoming requests
 app.use(express.json());
 
+// Connect incident routes to Express application
+app.use("/api/incidents", incidentRoutes);
+
 // Use the port variable from .env
 const PORT = process.env.PORT;
 
