@@ -18,7 +18,7 @@ const incidentSchema = new mongoose.Schema(
     severity: {
       type: String,
       enum: ["Low", "Medium", "High", "Critical"],
-      default: "Low",
+      default: "Select Severity",
       index: true,
     },
 
@@ -38,7 +38,7 @@ const incidentSchema = new mongoose.Schema(
     status: {
       type: String,
       enum: ["Open", "Investigating", "Contained", "Resolved"],
-      default: "Open",
+      default: "Select Status",
       index: true,
     },
 

@@ -8,6 +8,9 @@ dotenv.config();
 // Create the Express application
 const app = express();
 
+// Read JSON data from the incoming requests
+app.use(express.json());
+
 // Use the port variable from .env
 const PORT = process.env.PORT;
 
