@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import express from "express";
 import connectDB from "./config/db.js";
+import incidentRoutes from "./routes/incidentRoutes.js";
 
 // Load the environment variables from the .env file
 dotenv.config();
