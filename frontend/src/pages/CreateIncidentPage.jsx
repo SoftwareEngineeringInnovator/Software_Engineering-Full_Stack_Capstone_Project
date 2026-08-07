@@ -1,4 +1,4 @@
-// This page will allow users to POST/submit a new incident ticket.
+// This page will allow users to POST/submit a new incident ticket
 function CreateIncidentPage() {
   return (
     <main>
