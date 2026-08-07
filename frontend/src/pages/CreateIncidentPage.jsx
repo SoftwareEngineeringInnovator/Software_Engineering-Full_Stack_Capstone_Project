@@ -113,8 +113,20 @@ function CreateIncidentPage() {
                         <option value="Investigating">Investigating</option>
                         <option value="Contained">Contained</option>
                         <option value="Resolved">Resolved</option>
-                        
+
                     </select>
+                </div>
+
+                {/* Field for the user to record the affected system or device */}
+                <div>
+                    <label htmlFor="affectedSystem">Affected System</label>
+                    <input
+                        type="text"
+                        id="affectedSystem"
+                        name="affectedSystem"
+                        value={formData.affectedSystem}
+                        onChange={handleChange}
+                    />
                 </div>
             </form>
         </main>
