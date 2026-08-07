@@ -128,6 +128,18 @@ function CreateIncidentPage() {
                         onChange={handleChange}
                     />
                 </div>
+
+                {/* Field for the user to record the affected user */}
+                <div>
+                    <label htmlFor="reportedBy">Reported By</label>
+                    <input
+                        type="text"
+                        id="reportedBy"
+                        name="reportedBy"
+                        value={formData.reportedBy}
+                        onChange={handleChange}
+                    />
+                </div>
             </form>
         </main>
     );
