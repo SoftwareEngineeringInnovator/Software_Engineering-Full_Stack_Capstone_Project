@@ -76,7 +76,7 @@ function CreateIncidentPage() {
                     </select>
                 </div>
 
-                {/* Field for the user to select the type of cybersecurity incident. */}
+                {/* Field for the user to select the type of cybersecurity incident */}
                 <div>
                     <label htmlFor="category">Category</label>
                     <select
@@ -94,6 +94,25 @@ function CreateIncidentPage() {
                         <option value="Data Exposure">Data Exposure</option>
                         <option value="Network Attack">Network Attack</option>
                         <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                {/* Field for the user to select the current status of the incident */}
+                <div>
+                    <label htmlFor="status">Status</label>
+                    <select
+                        id="status"
+                        name="status"
+                        value={formData.status}
+                        onChange={handleChange}
+                    >
+                        <option value="" disabled>
+                            Select category
+                        </option>
+                        <option value="Open">Open</option>
+                        <option value="Investigating">Investigating</option>
+                        <option value="Contained">Contained</option>
+                        <option value="Resolved">Resolved</option>
                     </select>
                 </div>
             </form>
