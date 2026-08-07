@@ -162,6 +162,11 @@ function CreateIncidentPage() {
                         onChange={handleChange}
                     />
                 </div>
+
+                {/* Button to submit the incident ticket */}
+                <button type="submit">
+                    Submit Incident
+                </button>
             </form>
         </main>
     );
