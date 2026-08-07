@@ -56,6 +56,22 @@ function CreateIncidentPage() {
                         onChange={handleChange}
                     />
                 </div>
+
+                {/* Field for the user to select the severity level of the incident */}
+                <div>
+                    <label htmlFor="severity">Severity</label>
+                    <select
+                        id="severity"
+                        name="severity"
+                        value={formData.severity}
+                        onChange={handleChange}
+                    >
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                        <option value="Critical">Critical</option>
+                    </select>
+                </div>
             </form>
         </main>
     );
