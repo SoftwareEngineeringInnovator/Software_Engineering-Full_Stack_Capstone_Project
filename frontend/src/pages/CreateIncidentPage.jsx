@@ -113,7 +113,6 @@ function CreateIncidentPage() {
                         <option value="Investigating">Investigating</option>
                         <option value="Contained">Contained</option>
                         <option value="Resolved">Resolved</option>
-
                     </select>
                 </div>
 
@@ -149,6 +148,17 @@ function CreateIncidentPage() {
                         id="assignedTo"
                         name="assignedTo"
                         value={formData.assignedTo}
+                        onChange={handleChange}
+                    />
+                </div>
+
+                {/* Field for input notes by the IT support member */}
+                <div>
+                    <label htmlFor="resolutionNotes">Resolution Notes</label>
+                    <textarea
+                        id="resolutionNotes"
+                        name="resolutionNotes"
+                        value={formData.resolutionNotes}
                         onChange={handleChange}
                     />
                 </div>
