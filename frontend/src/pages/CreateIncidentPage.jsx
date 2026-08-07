@@ -66,10 +66,34 @@ function CreateIncidentPage() {
                         value={formData.severity}
                         onChange={handleChange}
                     >
+                        <option value="" disabled>
+                            Select category
+                        </option>
                         <option value="Low">Low</option>
                         <option value="Medium">Medium</option>
                         <option value="High">High</option>
                         <option value="Critical">Critical</option>
+                    </select>
+                </div>
+
+                {/* Field for the user to select the type of cybersecurity incident. */}
+                <div>
+                    <label htmlFor="category">Category</label>
+                    <select
+                        id="category"
+                        name="category"
+                        value={formData.category}
+                        onChange={handleChange}
+                    >
+                        <option value="" disabled>
+                            Select category
+                        </option>
+                        <option value="Malware">Malware</option>
+                        <option value="Phishing">Phishing</option>
+                        <option value="Unauthorized Access">Unauthorized Access</option>
+                        <option value="Data Exposure">Data Exposure</option>
+                        <option value="Network Attack">Network Attack</option>
+                        <option value="Other">Other</option>
                     </select>
                 </div>
             </form>
