@@ -16,6 +16,12 @@ function CreateIncidentPage() {
         resolutionNotes: "",
     });
 
+    // Show message when the incident is created successfully
+    const [successMessage, setSuccessMessage] = useState("");
+
+    // Show an error message if the incident cannot be created
+    const [errorMessage, setErrorMessage] = useState("");
+
     // Update the form fields
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -52,8 +58,18 @@ function CreateIncidentPage() {
 
             const newIncident = await response.json();
 
+            // Let the user know that the incident was saved successfully
+            setSuccessMessage("Incident reported successfully.");
+            setErrorMessage("");
+
             console.log("Incident created successfully:", newIncident);
+
+
         } catch (error) {
+            // Show the error directly on the page if the request fails
+            setErrorMessage(error.message);
+            setSuccessMessage("");
+
             console.error("Error creating incident:", error.message);
         }
     };
@@ -67,6 +83,7 @@ function CreateIncidentPage() {
             <p>Use this page to report a new cybersecurity incident.</p>
 
             {/* Form to collect information about the cybersecurity incident */}
+
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="title">Incident Title</label>
@@ -99,7 +116,7 @@ function CreateIncidentPage() {
                         onChange={handleChange}
                     >
                         <option value="" disabled>
-                            Select category
+                            Select severity
                         </option>
                         <option value="Low">Low</option>
                         <option value="Medium">Medium</option>
@@ -139,7 +156,7 @@ function CreateIncidentPage() {
                         onChange={handleChange}
                     >
                         <option value="" disabled>
-                            Select category
+                            Select status
                         </option>
                         <option value="Open">Open</option>
                         <option value="Investigating">Investigating</option>
@@ -199,6 +216,11 @@ function CreateIncidentPage() {
                 <button type="submit">
                     Submit Incident
                 </button>
+
+                {/* Display the Successful or Error message after the user submit the incident ticket */}
+                {successMessage && <p>{successMessage}</p>}
+
+                {errorMessage && <p>Error: {errorMessage}</p>}
             </form>
         </main>
     );
