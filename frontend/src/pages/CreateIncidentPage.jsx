@@ -1,5 +1,21 @@
+import { useState } from "react";
+
 // This page will allow users to POST/submit a new incident ticket
 function CreateIncidentPage() {
+
+     // Store the information the user enters into the incident form
+  const [formData, setFormData] = useState({
+    title: "",
+    description: "",
+    severity: "Low",
+    category: "",
+    status: "Open",
+    affectedSystem: "",
+    reportedBy: "",
+    assignedTo: "Unassigned",
+    resolutionNotes: "",
+  });
+
   return (
     <main>
       {/* Heading incident page */}
