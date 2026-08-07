@@ -140,6 +140,18 @@ function CreateIncidentPage() {
                         onChange={handleChange}
                     />
                 </div>
+
+                {/* Field to assign the incident ticket to an IT support member */}
+                <div>
+                    <label htmlFor="assignedTo">Assigned To</label>
+                    <input
+                        type="text"
+                        id="assignedTo"
+                        name="assignedTo"
+                        value={formData.assignedTo}
+                        onChange={handleChange}
+                    />
+                </div>
             </form>
         </main>
     );
