@@ -113,6 +113,7 @@ function CreateIncidentPage() {
                         <option value="Investigating">Investigating</option>
                         <option value="Contained">Contained</option>
                         <option value="Resolved">Resolved</option>
+                        
                     </select>
                 </div>
             </form>
