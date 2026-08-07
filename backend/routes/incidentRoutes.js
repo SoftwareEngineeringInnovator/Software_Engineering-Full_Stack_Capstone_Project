@@ -137,7 +137,7 @@ router.delete("/:id", async (req, res) => {
                 message: "Invalid incident ID",
             });
         }
-        
+
         // Return a 500 response when the process is unable to delete an incident
         res.status(500).json({
             message: "Unable to delete incident",
