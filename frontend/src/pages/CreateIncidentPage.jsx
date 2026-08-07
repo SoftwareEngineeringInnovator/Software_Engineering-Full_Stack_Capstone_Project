@@ -26,11 +26,36 @@ function CreateIncidentPage() {
         });
     };
 
-    // Handle the form submission without refreshing the browser page
-    const handleSubmit = (event) => {
+    // Handle the form submission without refreshing the browser page - Used for testing porpuses
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
+
+    //     console.log("Incident form submitted:", formData);
+    // };
+
+    // Send the incident form to the backend API
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
-        console.log("Incident form submitted:", formData);
+        try {
+            const response = await fetch("/api/incidents", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (!response.ok) {
+                throw new Error("Unable to create incident");
+            }
+
+            const newIncident = await response.json();
+
+            console.log("Incident created successfully:", newIncident);
+        } catch (error) {
+            console.error("Error creating incident:", error.message);
+        }
     };
 
     return (
