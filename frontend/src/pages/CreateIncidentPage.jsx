@@ -26,6 +26,13 @@ function CreateIncidentPage() {
         });
     };
 
+    // Handle the form submission without refreshing the browser page
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        console.log("Incident form submitted:", formData);
+    };
+
     return (
         <main>
             {/* Heading incident page */}
@@ -35,7 +42,7 @@ function CreateIncidentPage() {
             <p>Use this page to report a new cybersecurity incident.</p>
 
             {/* Form to collect information about the cybersecurity incident */}
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="title">Incident Title</label>
                     <input
