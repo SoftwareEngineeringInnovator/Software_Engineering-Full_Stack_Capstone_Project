@@ -98,7 +98,7 @@ function IncidentDetailsPage() {
                 </>
             )}
 
-            <div className="Incident-actions">
+            <div className="incident-actions">
                 {/* Button that will allow the user to delete an incident */}
                 <button type="button" onClick={handleDelete}>
                     Delete Incident
