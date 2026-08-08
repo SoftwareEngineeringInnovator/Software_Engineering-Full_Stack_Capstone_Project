@@ -37,6 +37,13 @@ function EditIncidentPage() {
     // Added console.log for testing purposes
     console.log("Edit form state:", formData);
 
+    // HandleChange function to update incident fields
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+
+        setFormData({ ...formData, [name]: value, });
+    };
+
     // Retrieve the selected incident
     useEffect(() => {
         const getIncident = async () => {
@@ -75,7 +82,7 @@ function EditIncidentPage() {
 
         getIncident();
     }, [id]);
-    
+
     // Added console.log for testing purposes
     console.log("Edit form data:", formData);
 
@@ -100,6 +107,18 @@ function EditIncidentPage() {
             {!loading && !error && incident && (
                 <p>Current Incident Title: {incident.title}</p>
             )}
+
+            {/* Test button for handleChange */}
+            <button type="button" onClick={() =>
+                handleChange({
+                    target: {
+                        name: "title",
+                        value: "Test Updated Title",
+                    },
+                })
+            }
+            >
+                Test handleChange button </button>
         </main>
     );
     // Added console.log for testing purposes
@@ -107,6 +126,10 @@ function EditIncidentPage() {
     // console.log("Error state:", error);
     // console.log("Incident state:", incident);
 }
+
+
+
+
 
 // Export the page so it can be used by React Router in App.jsx
 export default EditIncidentPage;
