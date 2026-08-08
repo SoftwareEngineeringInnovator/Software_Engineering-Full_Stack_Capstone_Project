@@ -21,21 +21,21 @@ function EditIncidentPage() {
     // console.log("Loading state:", loading);
     // console.log("Error state is empty:", error === "");
 
-// Store the values that will be displayed and updated in the edit form
-const [formData, setFormData] = useState({
-  title: "",
-  description: "",
-  severity: "Low",
-  category: "",
-  status: "Open",
-  affectedSystem: "",
-  reportedBy: "",
-  assignedTo: "Unassigned",
-  resolutionNotes: "",
-});
+    // Store the values that will be displayed and updated in the edit form
+    const [formData, setFormData] = useState({
+        title: "",
+        description: "",
+        severity: "Low",
+        category: "",
+        status: "Open",
+        affectedSystem: "",
+        reportedBy: "",
+        assignedTo: "Unassigned",
+        resolutionNotes: "",
+    });
 
-// Added console.log for testing purposes
-console.log("Edit form state:", formData);
+    // Added console.log for testing purposes
+    console.log("Edit form state:", formData);
 
     // Retrieve the selected incident
     useEffect(() => {
@@ -52,6 +52,20 @@ console.log("Edit form state:", formData);
                 const data = await response.json();
 
                 setIncident(data);
+
+                // Copy the retrieved incident information into the edit form
+                setFormData({
+                    title: data.title,
+                    description: data.description,
+                    severity: data.severity,
+                    category: data.category,
+                    status: data.status,
+                    affectedSystem: data.affectedSystem,
+                    reportedBy: data.reportedBy,
+                    assignedTo: data.assignedTo,
+                    resolutionNotes: data.resolutionNotes,
+                });
+
             } catch (error) {
                 setError(error.message);
             } finally {
@@ -61,6 +75,9 @@ console.log("Edit form state:", formData);
 
         getIncident();
     }, [id]);
+    
+    // Added console.log for testing purposes
+    console.log("Edit form data:", formData);
 
     return (
         <main>
