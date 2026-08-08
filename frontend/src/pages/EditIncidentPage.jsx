@@ -7,6 +7,9 @@ function EditIncidentPage() {
     // Read the incident ID from the route in the URL
     const { id } = useParams();
 
+    // Store the incident returned by the backend API
+    const [incident, setIncident] = useState(null);
+
     return (
         <main>
             {/* Page heading for editing an existing incident */}
