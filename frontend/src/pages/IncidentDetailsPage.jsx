@@ -16,6 +16,11 @@ function IncidentDetailsPage() {
     // Store an error message if the incident cannot be retrieved
     const [error, setError] = useState("");
 
+    // Handle the Delete Incident button click
+const handleDelete = () => {
+  console.log("Delete button clicked for incident:", id);
+};
+
     // Retrieve the selected incident whenever the ID in the URL changes
     useEffect(() => {
         const getIncident = async () => {
@@ -68,8 +73,8 @@ function IncidentDetailsPage() {
 
             <div>
                 {/* Button that will allow the user to delete an incident */}
-                <button type="button">
-                    Delete Incident
+                <button type="button" onClick={handleDelete}>
+  Delete Incident
                 </button>
             </div>
         </main>
