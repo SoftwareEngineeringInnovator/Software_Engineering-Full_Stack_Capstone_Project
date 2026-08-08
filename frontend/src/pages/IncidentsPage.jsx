@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "../App.css";
+import { Link } from "react-router";
 
 function IncidentsPage() {
   // Store the incidents returned by the API backend
