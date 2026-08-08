@@ -103,6 +103,11 @@ function IncidentDetailsPage() {
                 <button type="button" onClick={handleDelete}>
                     Delete Incident
                 </button>
+
+                {/* Button that will allow the user to edit an incident */}
+                <button type="button">
+                    Edit Incident
+                </button>
             </div>
         </main>
     );
