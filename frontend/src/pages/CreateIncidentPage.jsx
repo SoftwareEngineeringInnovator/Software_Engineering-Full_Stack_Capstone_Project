@@ -63,17 +63,17 @@ function CreateIncidentPage() {
             setErrorMessage("");
 
             // Clear the form after the incident gets submitted successfully
-setFormData({
-  title: "",
-  description: "",
-  severity: "Low",
-  category: "",
-  status: "Open",
-  affectedSystem: "",
-  reportedBy: "",
-  assignedTo: "Unassigned",
-  resolutionNotes: "",
-});
+            setFormData({
+                title: "",
+                description: "",
+                severity: "Low",
+                category: "",
+                status: "Open",
+                affectedSystem: "",
+                reportedBy: "",
+                assignedTo: "Unassigned",
+                resolutionNotes: "",
+            });
 
             // Message display on the console under the inspect tool
             console.log("Incident created successfully:", newIncident);
