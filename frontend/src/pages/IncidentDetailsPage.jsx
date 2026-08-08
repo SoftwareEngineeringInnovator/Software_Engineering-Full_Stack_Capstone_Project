@@ -16,10 +16,29 @@ function IncidentDetailsPage() {
     // Store an error message if the incident cannot be retrieved
     const [error, setError] = useState("");
 
-    // Handle the Delete Incident button click
-const handleDelete = () => {
-  console.log("Delete button clicked for incident:", id);
-};
+    // Handle the Delete Incident button click - used for testing porpuses using Inspect tool
+    // const handleDelete = () => {
+    //     console.log("Delete button clicked for incident:", id);
+    // };
+
+    // Async Delete function to delete incidents from the database
+    const handleDelete = async () => {
+        try {
+            const response = await fetch(`/api/incidents/${id}`, {
+                method: "DELETE",
+            });
+
+            if (!response.ok) {
+                throw new Error("Unable to delete incident");
+            }
+
+            const data = await response.json();
+
+            console.log("Incident deleted successfully:", data);
+        } catch (error) {
+            console.error("Error deleting incident:", error.message);
+        }
+    };
 
     // Retrieve the selected incident whenever the ID in the URL changes
     useEffect(() => {
@@ -74,7 +93,7 @@ const handleDelete = () => {
             <div>
                 {/* Button that will allow the user to delete an incident */}
                 <button type="button" onClick={handleDelete}>
-  Delete Incident
+                    Delete Incident
                 </button>
             </div>
         </main>
