@@ -60,6 +60,7 @@ function IncidentDetailsPage() {
                     <p>Category: {incident.category}</p>
                     <p>Status: {incident.status}</p>
                     <p>Affected System: {incident.affectedSystem}</p>
+                    <p>Reported By: {incident.reportedBy}</p>
                 </>
             )}
         </main>
