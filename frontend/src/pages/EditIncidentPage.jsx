@@ -38,6 +38,8 @@ function EditIncidentPage() {
                 setIncident(data);
             } catch (error) {
                 setError(error.message);
+            } finally {
+                setLoading(false);
             }
         };
 
