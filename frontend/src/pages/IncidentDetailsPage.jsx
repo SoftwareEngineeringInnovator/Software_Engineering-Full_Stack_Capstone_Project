@@ -62,6 +62,7 @@ function IncidentDetailsPage() {
                     <p>Affected System: {incident.affectedSystem}</p>
                     <p>Reported By: {incident.reportedBy}</p>
                     <p>Assigned To: {incident.assignedTo}</p>
+                    <p>Resolution Notes: {incident.resolutionNotes}</p>
                 </>
             )}
         </main>
