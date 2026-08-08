@@ -5,6 +5,7 @@ import IncidentsPage from "./pages/IncidentsPage.jsx";
 import CreateIncidentPage from "./pages/CreateIncidentPage.jsx";
 import IncidentDetailsPage from "./pages/IncidentDetailsPage.jsx";
 
+
 function App() {
   return (
     <>
