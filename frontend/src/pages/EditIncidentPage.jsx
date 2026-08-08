@@ -84,7 +84,7 @@ function EditIncidentPage() {
     }, [id]);
 
     // Added console.log for testing purposes
-    console.log("Edit form data:", formData);
+    // console.log("Edit form data:", formData);
 
     return (
         <main>
@@ -109,7 +109,7 @@ function EditIncidentPage() {
             )}
 
             {/* Test button for handleChange */}
-            <button type="button" onClick={() =>
+            {/* <button type="button" onClick={() =>
                 handleChange({
                     target: {
                         name: "title",
@@ -118,7 +118,7 @@ function EditIncidentPage() {
                 })
             }
             >
-                Test handleChange button </button>
+                Test handleChange button </button> */}
         </main>
     );
     // Added console.log for testing purposes
