@@ -21,6 +21,22 @@ function EditIncidentPage() {
     // console.log("Loading state:", loading);
     // console.log("Error state is empty:", error === "");
 
+// Store the values that will be displayed and updated in the edit form
+const [formData, setFormData] = useState({
+  title: "",
+  description: "",
+  severity: "Low",
+  category: "",
+  status: "Open",
+  affectedSystem: "",
+  reportedBy: "",
+  assignedTo: "Unassigned",
+  resolutionNotes: "",
+});
+
+// Added console.log for testing purposes
+console.log("Edit form state:", formData);
+
     // Retrieve the selected incident
     useEffect(() => {
         const getIncident = async () => {
