@@ -13,6 +13,9 @@ function EditIncidentPage() {
     // Track whether the incident is still being loaded
     const [loading, setLoading] = useState(true);
 
+    // Store an error message if the incident cannot be retrieved
+    const [error, setError] = useState("");
+
     return (
         <main>
             {/* Page heading for editing an existing incident */}
