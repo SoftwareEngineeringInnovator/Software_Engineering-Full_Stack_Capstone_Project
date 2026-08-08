@@ -26,6 +26,12 @@ useEffect(() => {
   const getIncident = async () => {
     const response = await fetch(`/api/incidents/${id}`);
 
+const data = await response.json();
+
+setIncident(data);
+
+console.log("Incident retrieved from API:", data);    
+
     console.log("Incident API response status:", response.status);
   };
 
