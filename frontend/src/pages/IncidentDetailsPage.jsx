@@ -59,6 +59,7 @@ function IncidentDetailsPage() {
                     <p>Severity: {incident.severity}</p>
                     <p>Category: {incident.category}</p>
                     <p>Status: {incident.status}</p>
+                    <p>Affected System: {incident.affectedSystem}</p>
                 </>
             )}
         </main>
