@@ -147,6 +147,24 @@ function EditIncidentPage() {
                                 <option value="Critical">Critical</option>
                             </select>
                         </div>
+
+                        {/* Allow the user to update the incident category */}
+                        <div>
+                            <label htmlFor="category">Category</label>
+                            <select
+                                id="category"
+                                name="category"
+                                value={formData.category}
+                                onChange={handleChange}
+                            >
+                                <option value="Malware">Malware</option>
+                                <option value="Phishing">Phishing</option>
+                                <option value="Unauthorized Access">Unauthorized Access</option>
+                                <option value="Data Exposure">Data Exposure</option>
+                                <option value="Network Attack">Network Attack</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
                     </form>
                 </>
             )}
@@ -171,6 +189,7 @@ function EditIncidentPage() {
     console.log("Current edit title:", formData.title);
     console.log("Current edit description:", formData.description);
     console.log("Current edit severity:", formData.severity);
+    console.log("Current edit category:", formData.category);
 }
 
 
