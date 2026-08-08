@@ -8,13 +8,18 @@ function EditIncidentPage() {
     const { id } = useParams();
 
     // Store the incident returned by the backend API
-    const [incident, setIncident] = useState(null);
+    const [incident, setIncident] = useState(null);    
 
     // Track whether the incident is still being loaded
     const [loading, setLoading] = useState(true);
 
     // Store an error message if the incident cannot be retrieved
     const [error, setError] = useState("");
+
+    // Added console.log for testing purposes
+    console.log("Incident state:", incident);
+    console.log("Loading state:", loading);
+    console.log("Error state is empty:", error === "");
 
     return (
         <main>
