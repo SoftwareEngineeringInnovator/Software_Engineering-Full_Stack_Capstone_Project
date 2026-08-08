@@ -21,22 +21,28 @@ function EditIncidentPage() {
     console.log("Loading state:", loading);
     console.log("Error state is empty:", error === "");
 
-// Retrieve the selected incident
-useEffect(() => {
-  const getIncident = async () => {
-    const response = await fetch(`/api/incidents/${id}`);
+    // Retrieve the selected incident
+    useEffect(() => {
+        const getIncident = async () => {
 
-const data = await response.json();
+            // Implement try/catch error handling
+            try {
+                const response = await fetch(`/api/incidents/${id}`);
 
-setIncident(data);
+                if (!response.ok) {
+                    throw new Error("Unable to retrieve incident");
+                }
 
-console.log("Incident retrieved from API:", data);    
+                const data = await response.json();
 
-    console.log("Incident API response status:", response.status);
-  };
+                setIncident(data);
+            } catch (error) {
+                setError(error.message);
+            }
+        };
 
-  getIncident();
-}, [id]);
+        getIncident();
+    }, [id]);
 
     return (
         <main>
