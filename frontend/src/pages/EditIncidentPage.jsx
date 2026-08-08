@@ -141,6 +141,7 @@ function EditIncidentPage() {
     // console.log("Loading state:", loading);
     // console.log("Error state:", error);
     // console.log("Incident state:", incident);
+    console.log("Current edit title:", formData.title);
 }
 
 
