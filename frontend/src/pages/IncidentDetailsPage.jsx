@@ -53,7 +53,7 @@ function IncidentDetailsPage() {
             {/* Display the incident title to confirm the API request works */}
             {!loading && !error && incident && (
                 <>
-                    <p>View the details of a selected cybersecurity incident.</p>
+                    <p>This page will display the details of a selected cybersecurity incident by ID.</p>
                     <p>Incident Title: {incident.title}</p>
                     <p>Description: {incident.description}</p>
                     <p>Severity: {incident.severity}</p>
