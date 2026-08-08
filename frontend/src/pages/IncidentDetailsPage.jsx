@@ -105,9 +105,11 @@ function IncidentDetailsPage() {
                 </button>
 
                 {/* Button that will allow the user to edit an incident */}
-                <button type="button">
-                    Edit Incident
-                </button>
+                <Link to={`/incidents/${id}/edit`}>
+                    <button type="button">
+                        Edit Incident
+                    </button>
+                </Link>
             </div>
         </main>
     );
