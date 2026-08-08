@@ -4,7 +4,7 @@ import HomePage from "./pages/HomePage.jsx";
 import IncidentsPage from "./pages/IncidentsPage.jsx";
 import CreateIncidentPage from "./pages/CreateIncidentPage.jsx";
 import IncidentDetailsPage from "./pages/IncidentDetailsPage.jsx";
-
+import EditIncidentPage from "./pages/EditIncidentPage.jsx";
 
 function App() {
   return (
