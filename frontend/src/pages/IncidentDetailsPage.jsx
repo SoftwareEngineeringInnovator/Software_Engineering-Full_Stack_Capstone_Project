@@ -38,6 +38,15 @@ function IncidentDetailsPage() {
             const data = await response.json();
 
             console.log("Incident deleted successfully:", data);
+
+            const data = await response.json();
+
+            console.log("Incident deleted successfully:", data);
+
+            // After Incident Deletion the user will be redirected to the Incidents page
+            navigate("/incidents");
+
+
         } catch (error) {
             console.error("Error deleting incident:", error.message);
         }
