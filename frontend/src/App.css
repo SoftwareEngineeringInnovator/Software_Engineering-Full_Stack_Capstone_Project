@@ -4,3 +4,10 @@ nav {
   gap: 20px;
   justify-content: center;
 }
+
+/* Use Flexbox to center the incident action buttons and add space between them */
+.incident-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
