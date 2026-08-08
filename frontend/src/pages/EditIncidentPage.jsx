@@ -17,9 +17,9 @@ function EditIncidentPage() {
     const [error, setError] = useState("");
 
     // Added console.log for testing purposes
-    console.log("Incident state:", incident);
-    console.log("Loading state:", loading);
-    console.log("Error state is empty:", error === "");
+    // console.log("Incident state:", incident);
+    // console.log("Loading state:", loading);
+    // console.log("Error state is empty:", error === "");
 
     // Retrieve the selected incident
     useEffect(() => {
@@ -70,9 +70,9 @@ function EditIncidentPage() {
         </main>
     );
     // Added console.log for testing purposes
-    console.log("Loading state:", loading);
-    console.log("Error state:", error);
-    console.log("Incident state:", incident);
+    // console.log("Loading state:", loading);
+    // console.log("Error state:", error);
+    // console.log("Incident state:", incident);
 }
 
 // Export the page so it can be used by React Router in App.jsx
