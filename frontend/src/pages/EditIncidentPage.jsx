@@ -131,6 +131,22 @@ function EditIncidentPage() {
                                 onChange={handleChange}
                             />
                         </div>
+
+                        {/* Allow the user to update the incident severity */}
+                        <div>
+                            <label htmlFor="severity">Severity</label>
+                            <select
+                                id="severity"
+                                name="severity"
+                                value={formData.severity}
+                                onChange={handleChange}
+                            >
+                                <option value="Low">Low</option>
+                                <option value="Medium">Medium</option>
+                                <option value="High">High</option>
+                                <option value="Critical">Critical</option>
+                            </select>
+                        </div>
                     </form>
                 </>
             )}
@@ -154,6 +170,7 @@ function EditIncidentPage() {
     // console.log("Incident state:", incident);
     console.log("Current edit title:", formData.title);
     console.log("Current edit description:", formData.description);
+    console.log("Current edit severity:", formData.severity);
 }
 
 
