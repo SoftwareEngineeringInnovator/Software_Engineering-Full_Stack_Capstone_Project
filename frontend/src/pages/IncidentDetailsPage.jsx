@@ -57,6 +57,7 @@ function IncidentDetailsPage() {
                     <p>Incident Title: {incident.title}</p>
                     <p>Description: {incident.description}</p>
                     <p>Severity: {incident.severity}</p>
+                    <p>Category: {incident.category}</p>
                 </>
             )}
         </main>
