@@ -105,7 +105,23 @@ function EditIncidentPage() {
 
             {/* Displays the title to confirm the incident was retrieved */}
             {!loading && !error && incident && (
-                <p>Current Incident Title: {incident.title}</p>
+                <>
+                    <p>Current Incident Title: {incident.title}</p>
+
+                    <form>
+                        {/* Allow the user to update the incident title */}
+                        <div>
+                            <label htmlFor="title">Title</label>
+                            <input
+                                type="text"
+                                id="title"
+                                name="title"
+                                value={formData.title}
+                                onChange={handleChange}
+                            />
+                        </div>
+                    </form>
+                </>
             )}
 
             {/* Test button for handleChange */}
