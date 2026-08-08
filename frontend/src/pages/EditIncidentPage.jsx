@@ -1,4 +1,5 @@
 import { useParams } from "react-router";
+import { useEffect, useState } from "react";
 
 // This page will allow users to update an existing cybersecurity incident
 function EditIncidentPage() {
