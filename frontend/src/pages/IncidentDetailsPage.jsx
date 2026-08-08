@@ -4,19 +4,19 @@ import { useEffect, useState } from "react";
 // This page will display details of the cybersecurity incidents
 function IncidentDetailsPage() {
 
-    // Read the incident ID from the dynamic route in the browser URL.
+    // Read the incident ID from the dynamic route in the browser URL
     const { id } = useParams();
 
     // Store the incident returned by the backend API.
     const [incident, setIncident] = useState(null);
 
-    // Track whether the incident is still being loaded.
+    // Track whether the incident is still being loaded
     const [loading, setLoading] = useState(true);
 
-    // Store an error message if the incident cannot be retrieved.
+    // Store an error message if the incident cannot be retrieved
     const [error, setError] = useState("");
 
-    // Retrieve the selected incident whenever the ID in the URL changes.
+    // Retrieve the selected incident whenever the ID in the URL changes
     useEffect(() => {
         const getIncident = async () => {
             try {
@@ -65,6 +65,13 @@ function IncidentDetailsPage() {
                     <p>Resolution Notes: {incident.resolutionNotes}</p>
                 </>
             )}
+
+            <div>
+                {/* Button that will allow the user to delete an incident */}
+                <button type="button">
+                    Delete Incident
+                </button>
+            </div>
         </main>
     );
 }
