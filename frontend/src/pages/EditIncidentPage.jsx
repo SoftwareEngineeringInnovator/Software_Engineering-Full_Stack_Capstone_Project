@@ -59,10 +59,14 @@ function EditIncidentPage() {
 
             {/* Displays message when the incident is loading */}
             {loading && <p>Loading incident...</p>}
+
+            {/* Show an error if the incident cannot be retrieved */}
+            {error && <p>Error: {error}</p>}
         </main>
     );
     // Added console.log for testing purposes
     console.log("Loading state:", loading);
+    console.log("Error state:", error);
 }
 
 // Export the page so it can be used by React Router in App.jsx
