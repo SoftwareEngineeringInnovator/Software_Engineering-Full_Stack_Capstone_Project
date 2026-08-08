@@ -23,6 +23,9 @@ function App() {
 
         {/* Displays one incident based on the ID */}
         <Route path="/incidents/:id" element={<IncidentDetailsPage />} />
+
+        {/* Display the page for editing an existing incident based on its ID */}
+        <Route path="/incidents/:id/edit" element={<EditIncidentPage />} />
       </Routes>
     </>
   );
