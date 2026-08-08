@@ -10,6 +10,9 @@ function EditIncidentPage() {
     // Store the incident returned by the backend API
     const [incident, setIncident] = useState(null);
 
+    // Track whether the incident is still being loaded
+    const [loading, setLoading] = useState(true);
+
     return (
         <main>
             {/* Page heading for editing an existing incident */}
