@@ -7,6 +7,9 @@ function IncidentDetailsPage() {
     // Read the incident ID from the dynamic route in the browser URL
     const { id } = useParams();
 
+    // useNavigate will allow the application to redirect the user to another page
+    const navigate = useNavigate();
+
     // Store the incident returned by the backend API.
     const [incident, setIncident] = useState(null);
 
