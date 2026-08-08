@@ -8,7 +8,7 @@ function EditIncidentPage() {
     const { id } = useParams();
 
     // Store the incident returned by the backend API
-    const [incident, setIncident] = useState(null);    
+    const [incident, setIncident] = useState(null);
 
     // Track whether the incident is still being loaded
     const [loading, setLoading] = useState(true);
@@ -20,6 +20,17 @@ function EditIncidentPage() {
     console.log("Incident state:", incident);
     console.log("Loading state:", loading);
     console.log("Error state is empty:", error === "");
+
+// Retrieve the selected incident
+useEffect(() => {
+  const getIncident = async () => {
+    const response = await fetch(`/api/incidents/${id}`);
+
+    console.log("Incident API response status:", response.status);
+  };
+
+  getIncident();
+}, [id]);
 
     return (
         <main>
