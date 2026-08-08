@@ -1,5 +1,11 @@
+import { useParams } from "react-router";
+
 // This page will display details of the cybersecurity incidents
 function IncidentDetailsPage() {
+
+    // Read the incident ID from the dynamic route in the browser URL.
+  const { id } = useParams();
+
   return (
     <main>
       {/* Page heading for the selected incident */}
@@ -7,6 +13,7 @@ function IncidentDetailsPage() {
 
       {/* Page will retrieve incidents using its MongoDB ID */}
       <p>View the details of a selected cybersecurity incident.</p>
+      <p>Incident ID: {id}</p>
     </main>
   );
 }
