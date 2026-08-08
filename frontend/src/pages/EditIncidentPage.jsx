@@ -120,6 +120,17 @@ function EditIncidentPage() {
                                 onChange={handleChange}
                             />
                         </div>
+
+                        {/* Allow the user to update the incident description */}
+                        <div>
+                            <label htmlFor="description">Description</label>
+                            <textarea
+                                id="description"
+                                name="description"
+                                value={formData.description}
+                                onChange={handleChange}
+                            />
+                        </div>
                     </form>
                 </>
             )}
@@ -142,6 +153,7 @@ function EditIncidentPage() {
     // console.log("Error state:", error);
     // console.log("Incident state:", incident);
     console.log("Current edit title:", formData.title);
+    console.log("Current edit description:", formData.description);
 }
 
 
