@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router";
+import { useNavigate, useParams, Link } from "react-router";
 import { useEffect, useState } from "react";
 
 // This page will display details of the cybersecurity incidents
