@@ -54,10 +54,15 @@ function EditIncidentPage() {
             {/* Paragrah to explain the action allowed */}
             <p>Update the information for the selected cybersecurity incident.</p>
 
-            {/* Display the incident ID from the URL */}
+            {/* Displays the incident ID from the URL */}
             <p>Incident ID: {id}</p>
+
+            {/* Displays message when the incident is loading */}
+            {loading && <p>Loading incident...</p>}
         </main>
     );
+    // Added console.log for testing purposes
+    console.log("Loading state:", loading);
 }
 
 // Export the page so it can be used by React Router in App.jsx
