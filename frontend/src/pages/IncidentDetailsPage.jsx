@@ -55,6 +55,7 @@ function IncidentDetailsPage() {
                 <>
                     <p>View the details of a selected cybersecurity incident.</p>
                     <p>Incident Title: {incident.title}</p>
+                    <p>Description: {incident.description}</p>
                 </>
             )}
         </main>
