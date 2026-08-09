@@ -74,6 +74,8 @@ function CreateIncidentPage() {
         // Trigger the download.
         downloadLink.click();
 
+        // Release the browser URL after the download
+        URL.revokeObjectURL(reportUrl);
 
         // Displays the report text to test it before downloading a file
         console.log(reportText);
