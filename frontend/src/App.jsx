@@ -5,6 +5,7 @@ import IncidentsPage from "./pages/IncidentsPage.jsx";
 import CreateIncidentPage from "./pages/CreateIncidentPage.jsx";
 import IncidentDetailsPage from "./pages/IncidentDetailsPage.jsx";
 import EditIncidentPage from "./pages/EditIncidentPage.jsx";
+import LoginPage from "./pages/LoginPage.jsx";
 
 function App() {
   return (
@@ -24,8 +25,11 @@ function App() {
         {/* Displays one incident based on the ID */}
         <Route path="/incidents/:id" element={<IncidentDetailsPage />} />
 
-        {/* Display the page for editing an existing incident based on its ID */}
+        {/* Displays the page for editing an existing incident based on its ID */}
         <Route path="/incidents/:id/edit" element={<EditIncidentPage />} />
+
+        {/* Displays the Login page for registered application users */}
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </>
   );
