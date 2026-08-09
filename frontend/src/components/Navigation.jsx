@@ -12,6 +12,9 @@ function Navigation() {
 
             {/* Link to the page where users report the incident */}
             <Link to="/incidents/new">Report Incident</Link>
+
+            {/* Link to the Login page for registered users */}
+            <Link to="/login">Login</Link>
         </nav>
     );
 }
