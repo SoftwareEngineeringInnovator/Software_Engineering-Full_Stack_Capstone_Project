@@ -10,6 +10,9 @@ function LoginPage() {
         password: "",
     });
 
+    // Store a message when the user's login attempt is unsuccessful
+    const [loginError, setLoginError] = useState("");
+
     // Allow the application to redirect the user after a successful login
     const navigate = useNavigate();
 
@@ -30,6 +33,9 @@ function LoginPage() {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
+        // Clear any previous login error before trying again
+        setLoginError("");
+
         try {
             const response = await fetch("/api/auth/login", {
                 method: "POST",
@@ -43,7 +49,7 @@ function LoginPage() {
 
             // Stop the login process if the backend rejects the credentials
             if (!response.ok) {
-                console.log("Login failed:", data.message);
+                setLoginError(data.message);
                 return;
             }
 
@@ -100,6 +106,9 @@ function LoginPage() {
                 <button type="submit">
                     Login
                 </button>
+
+                {/* Shows authentication error for fails attempts */}
+                {loginError && <p>{loginError}</p>}
             </form>
 
             {/* Test button for testing the login handleChange function */}
