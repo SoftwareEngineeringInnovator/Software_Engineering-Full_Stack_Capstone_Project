@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 // This page will allow registered users to log in to the application
 function LoginPage() {
@@ -8,6 +9,9 @@ function LoginPage() {
         email: "",
         password: "",
     });
+
+    // Allow the application to redirect the user after a successful login
+    const navigate = useNavigate();
 
     // Update the matching login field when the user changes an input
     const handleChange = (event) => {
@@ -45,7 +49,10 @@ function LoginPage() {
 
             // Store the authentication token so it can be used with protected API requests
             localStorage.setItem("token", data.token);
-            
+
+            // Send the authenticated user to the Home page
+            navigate("/");
+
             // Added console.log for testing purposes
             // console.log("Login token stored successfully");
             // console.log("Login response status:", response.status);
