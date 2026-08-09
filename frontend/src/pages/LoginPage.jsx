@@ -9,6 +9,16 @@ function LoginPage() {
         password: "",
     });
 
+    // Update the matching login field when the user changes an input
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
     // Added console.log for testing purposes
     console.log("Login form state:", formData);
 
@@ -18,6 +28,18 @@ function LoginPage() {
             <h1>Login</h1>
 
             <p>Log in to access the Cybersecurity Incident Tracker.</p>
+
+            {/* Test button for testing the login handleChange function */}
+            <button type="button" onClick={() =>
+                handleChange({
+                    target: {
+                        name: "email",
+                        value: "testuser@example.com",
+                    },
+                })
+            }
+            > Test Login State
+            </button>
         </main>
     );
 }
