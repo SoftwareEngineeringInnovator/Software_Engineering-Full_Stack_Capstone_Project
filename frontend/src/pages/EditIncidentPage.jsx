@@ -44,6 +44,14 @@ function EditIncidentPage() {
         setFormData({ ...formData, [name]: value, });
     };
 
+    // Handle the form submission without refreshing the page
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        // Displays the edited form data - console.log for testing porpuses
+        console.log("Updated incident form submitted:", formData);
+    };
+
     // Retrieve the selected incident
     useEffect(() => {
         const getIncident = async () => {
@@ -108,7 +116,7 @@ function EditIncidentPage() {
                 <>
                     <p>Current Incident Title: {incident.title}</p>
 
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         {/* Allow the user to update the incident title */}
                         <div>
                             <label htmlFor="title">Title: </label>
