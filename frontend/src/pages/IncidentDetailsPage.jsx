@@ -7,7 +7,7 @@ function IncidentDetailsPage() {
     // Read the incident ID from the dynamic route in the browser URL
     const { id } = useParams();
 
-    // useNavigate will allow the application to redirect the user to another page
+    // Allow the application to redirect the user to the Incident page
     const navigate = useNavigate();
 
     // Store the incident returned by the backend API.
@@ -39,7 +39,7 @@ function IncidentDetailsPage() {
 
             console.log("Incident deleted successfully:", data);
 
-            // After Incident Deletion the user will be redirected to the Incidents page
+            // Return the user to the Incident page after a successful DELETE
             navigate("/incidents");
 
 
