@@ -289,6 +289,11 @@ function EditIncidentPage() {
                         <button type="submit">
                             Update Incident
                         </button>
+
+                        {/* Show feedback after the user tries to update the incident */}
+                        {updateSuccess && <p>{updateSuccess}</p>}
+
+                        {updateError && <p>Error: {updateError}</p>}
                     </form>
                 </>
             )}
