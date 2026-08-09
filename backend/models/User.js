@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import bcrypt from "bcryptjs";
 
 // Define the information for each application user
 const userSchema = new mongoose.Schema(
@@ -30,6 +31,17 @@ const userSchema = new mongoose.Schema(
         timestamps: true,
     },
 );
+
+// Hash the user's password
+userSchema.pre("save", async function () {
+    // Do not hash the password if it has not been changed
+    if (!this.isModified("password")) {
+        return;
+    }
+
+    // Replace the plain-text password with password hash
+    this.password = await bcrypt.hash(this.password, 10);
+});
 
 // Create the User model
 const User = mongoose.model("User", userSchema);
