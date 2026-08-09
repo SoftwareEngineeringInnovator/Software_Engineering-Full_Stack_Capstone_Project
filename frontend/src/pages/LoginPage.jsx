@@ -29,6 +29,20 @@ function LoginPage() {
 
             <p>Log in to access the Cybersecurity Incident Tracker.</p>
 
+            <form>
+                {/* Allow the user to enter the email associated with their account */}
+                <div>
+                    <label htmlFor="email">Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                    />
+                </div>
+            </form>
+
             {/* Test button for testing the login handleChange function */}
             <button type="button" onClick={() =>
                 handleChange({
@@ -42,6 +56,9 @@ function LoginPage() {
             </button>
         </main>
     );
+
+    // Added console.log for testing porpuses
+    console.log("Current login email:", formData.email);
 }
 
 // Export the page so it can be used by React Router
