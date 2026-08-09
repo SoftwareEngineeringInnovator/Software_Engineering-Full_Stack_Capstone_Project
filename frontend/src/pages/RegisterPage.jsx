@@ -21,8 +21,13 @@ function RegisterPage() {
         });
     };
 
-    // Added console.log for testing purposes
-    console.log("Register form state:", formData);
+    // Handle the registration form submission without refreshing the page
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        // Added console.log for testing purposes
+        console.log("Register form submitted:", formData);
+    };
 
     return (
         <main>
@@ -31,22 +36,51 @@ function RegisterPage() {
 
             <p>Create an account to access the Cybersecurity Incident Tracker.</p>
 
-            {/* Test button to test the registration handleChange function */}
-            <button type="button" onClick={() =>
-                    handleChange({
-                        target: {
-                            name: "name",
-                            value: "Test User",
-                        },
-                    })
-                }
-            > Test Register State
-            </button>
+            <form onSubmit={handleSubmit}>
+                {/* Allow the user to enter their name */}
+                <div>
+                    <label htmlFor="name">Name: </label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+
+                {/* Allow the user to enter their email address */}
+                <div>
+                    <label htmlFor="email">Email: </label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+
+                {/* Allow the user to create a password */}
+                <div>
+                    <label htmlFor="password">Password: </label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+
+                {/* Submit the new user's registration information */}
+                <button type="submit">Register</button>
+            </form>
         </main>
     );
-
-    // Added console.log for testing purposes
-
 }
 
 // Export the page so it can be used by React Router
