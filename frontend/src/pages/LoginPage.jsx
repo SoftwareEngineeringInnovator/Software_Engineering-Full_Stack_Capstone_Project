@@ -53,10 +53,15 @@ function LoginPage() {
                         onChange={handleChange}
                     />
                 </div>
+
+                {/* Button to submit the user's login credentials */}
+                <button type="submit">
+                    Login
+                </button>
             </form>
 
             {/* Test button for testing the login handleChange function */}
-            <button type="button" onClick={() =>
+            {/* <button type="button" onClick={() =>
                 handleChange({
                     target: {
                         name: "email",
@@ -65,7 +70,7 @@ function LoginPage() {
                 })
             }
             > Test Login State
-            </button>
+            </button> */}
         </main>
     );
 
