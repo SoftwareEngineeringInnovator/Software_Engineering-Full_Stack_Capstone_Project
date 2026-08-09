@@ -11,6 +11,16 @@ function RegisterPage() {
         password: "",
     });
 
+    // Update the matching registration field when the user changes an input
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
     // Added console.log for testing purposes
     console.log("Register form state:", formData);
 
@@ -20,6 +30,18 @@ function RegisterPage() {
             <h1>Register</h1>
 
             <p>Create an account to access the Cybersecurity Incident Tracker.</p>
+
+            {/* Test button to test the registration handleChange function */}
+            <button type="button" onClick={() =>
+                    handleChange({
+                        target: {
+                            name: "name",
+                            value: "Test User",
+                        },
+                    })
+                }
+            > Test Register State
+            </button>
         </main>
     );
 
