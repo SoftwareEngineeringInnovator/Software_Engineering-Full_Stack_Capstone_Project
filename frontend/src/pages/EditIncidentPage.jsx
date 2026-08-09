@@ -194,7 +194,7 @@ function EditIncidentPage() {
                             />
                         </div>
 
-                        {/* Allow the user to update who reported the incident. */}
+                        {/* Allow the user to update who reported the incident */}
                         <div>
                             <label htmlFor="reportedBy">Reported By</label>
                             <input
@@ -202,6 +202,18 @@ function EditIncidentPage() {
                                 id="reportedBy"
                                 name="reportedBy"
                                 value={formData.reportedBy}
+                                onChange={handleChange}
+                            />
+                        </div>
+
+                        {/* Allow the user to update who is assigned to the incident */}
+                        <div>
+                            <label htmlFor="assignedTo">Assigned To</label>
+                            <input
+                                type="text"
+                                id="assignedTo"
+                                name="assignedTo"
+                                value={formData.assignedTo}
                                 onChange={handleChange}
                             />
                         </div>
@@ -233,6 +245,7 @@ function EditIncidentPage() {
     console.log("Current edit status:", formData.status);
     console.log("Current affected system:", formData.affectedSystem);
     console.log("Current reported by:", formData.reportedBy);
+    console.log("Current assigned to:", formData.assignedTo);
 }
 
 
