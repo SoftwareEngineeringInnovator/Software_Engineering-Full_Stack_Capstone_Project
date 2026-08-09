@@ -193,6 +193,18 @@ function EditIncidentPage() {
                                 onChange={handleChange}
                             />
                         </div>
+
+                        {/* Allow the user to update who reported the incident. */}
+                        <div>
+                            <label htmlFor="reportedBy">Reported By</label>
+                            <input
+                                type="text"
+                                id="reportedBy"
+                                name="reportedBy"
+                                value={formData.reportedBy}
+                                onChange={handleChange}
+                            />
+                        </div>
                     </form>
                 </>
             )}
@@ -220,6 +232,7 @@ function EditIncidentPage() {
     console.log("Current edit category:", formData.category);
     console.log("Current edit status:", formData.status);
     console.log("Current affected system:", formData.affectedSystem);
+    console.log("Current reported by:", formData.reportedBy);
 }
 
 
