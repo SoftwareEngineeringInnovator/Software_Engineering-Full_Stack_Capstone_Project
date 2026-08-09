@@ -61,7 +61,19 @@ function CreateIncidentPage() {
 
         // Create a temporary browser URL that points to the text file Blob
         const reportUrl = URL.createObjectURL(reportBlob);
-        
+
+        // Creates link to download the incident report
+        const downloadLink = document.createElement("a");
+
+        // Points the link to the Blob URL
+        downloadLink.href = reportUrl;
+
+        // Set the file name that the user will download
+        downloadLink.download = "incident-report.txt";
+
+        // Trigger the download.
+        downloadLink.click();
+
 
         // Displays the report text to test it before downloading a file
         console.log(reportText);
