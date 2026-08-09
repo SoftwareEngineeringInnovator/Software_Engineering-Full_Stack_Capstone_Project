@@ -226,10 +226,17 @@ function CreateIncidentPage() {
                     />
                 </div>
 
-                {/* Button to submit the incident ticket */}
-                <button type="submit">
-                    Submit Incident
-                </button>
+                <div className="incident-actions">
+                    {/* Button to submit the incident ticket */}
+                    <button type="submit">
+                        Submit Incident
+                    </button>
+
+                    {/* Button allow the user to download the incident information as a text file */}
+                    <button type="button">
+                        Download Report
+                    </button>
+                </div>
 
                 {/* Display the Successful or Error message after the user submit the incident ticket */}
                 {successMessage && <p>{successMessage}</p>}
