@@ -6,6 +6,7 @@ import CreateIncidentPage from "./pages/CreateIncidentPage.jsx";
 import IncidentDetailsPage from "./pages/IncidentDetailsPage.jsx";
 import EditIncidentPage from "./pages/EditIncidentPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
+import RegisterPage from "./pages/RegisterPage.jsx";
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
 
         {/* Displays the Login page for registered application users */}
         <Route path="/login" element={<LoginPage />} />
+
+        {/* Displays the Register page for application users */}
+        <Route path="/register" element={<RegisterPage />} />
       </Routes>
     </>
   );

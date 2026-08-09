@@ -15,6 +15,9 @@ function Navigation() {
 
             {/* Link to the Login page for registered users */}
             <Link to="/login">Login</Link>
+
+            {/* Link to the Register page for users */}
+            <Link to="/register">Register</Link>
         </nav>
     );
 }
