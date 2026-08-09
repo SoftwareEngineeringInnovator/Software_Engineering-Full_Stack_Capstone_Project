@@ -32,12 +32,24 @@ function LoginPage() {
             <form>
                 {/* Allow the user to enter the email associated with their account */}
                 <div>
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email">Email: </label>
                     <input
                         type="email"
                         id="email"
                         name="email"
                         value={formData.email}
+                        onChange={handleChange}
+                    />
+                </div>
+
+                {/* Allow the user to enter their account password */}
+                <div>
+                    <label htmlFor="password">Password: </label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        value={formData.password}
                         onChange={handleChange}
                     />
                 </div>
@@ -59,6 +71,7 @@ function LoginPage() {
 
     // Added console.log for testing porpuses
     console.log("Current login email:", formData.email);
+    console.log("Current login password:", formData.password);
 }
 
 // Export the page so it can be used by React Router
