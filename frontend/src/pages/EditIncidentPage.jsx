@@ -45,9 +45,27 @@ function EditIncidentPage() {
     };
 
     // Handle the form submission without refreshing the page
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
+        // Send the edited incident to the backend API
+        try {
+            const response = await fetch(`/api/incidents/${id}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            console.log("Update response status:", response.status);
+
+            const data = await response.json();
+
+            console.log("Updated incident returned by API:", data);
+        } catch (error) {
+            console.error("Error updating incident:", error.message);
+        }
         // Displays the edited form data - console.log for testing porpuses
         console.log("Updated incident form submitted:", formData);
     };
