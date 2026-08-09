@@ -60,6 +60,11 @@ function EditIncidentPage() {
 
             console.log("Update response status:", response.status);
 
+            // Stop the update process if the backend returns an unsuccessful response
+            if (!response.ok) {
+                throw new Error("Unable to update incident");
+            }
+
             const data = await response.json();
 
             console.log("Updated incident returned by API:", data);
