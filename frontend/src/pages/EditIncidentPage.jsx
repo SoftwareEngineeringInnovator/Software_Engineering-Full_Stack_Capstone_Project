@@ -165,6 +165,22 @@ function EditIncidentPage() {
                                 <option value="Other">Other</option>
                             </select>
                         </div>
+
+                        {/* Allow the user to update the incident status */}
+                        <div>
+                            <label htmlFor="status">Status</label>
+                            <select
+                                id="status"
+                                name="status"
+                                value={formData.status}
+                                onChange={handleChange}
+                            >
+                                <option value="Open">Open</option>
+                                <option value="Investigating">Investigating</option>
+                                <option value="Contained">Contained</option>
+                                <option value="Resolved">Resolved</option>
+                            </select>
+                        </div>
                     </form>
                 </>
             )}
@@ -190,6 +206,7 @@ function EditIncidentPage() {
     console.log("Current edit description:", formData.description);
     console.log("Current edit severity:", formData.severity);
     console.log("Current edit category:", formData.category);
+    console.log("Current edit status:", formData.status);
 }
 
 
