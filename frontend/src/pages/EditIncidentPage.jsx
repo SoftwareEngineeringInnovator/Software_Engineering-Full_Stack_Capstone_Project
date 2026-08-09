@@ -217,6 +217,17 @@ function EditIncidentPage() {
                                 onChange={handleChange}
                             />
                         </div>
+
+                        {/* Allow the user to update the resolution notes for the incident */}
+                        <div>
+                            <label htmlFor="resolutionNotes">Resolution Notes</label>
+                            <textarea
+                                id="resolutionNotes"
+                                name="resolutionNotes"
+                                value={formData.resolutionNotes}
+                                onChange={handleChange}
+                            />
+                        </div>
                     </form>
                 </>
             )}
@@ -246,6 +257,7 @@ function EditIncidentPage() {
     console.log("Current affected system:", formData.affectedSystem);
     console.log("Current reported by:", formData.reportedBy);
     console.log("Current assigned to:", formData.assignedTo);
+    console.log("Current resolution notes:", formData.resolutionNotes);
 }
 
 
