@@ -111,7 +111,7 @@ function EditIncidentPage() {
                     <form>
                         {/* Allow the user to update the incident title */}
                         <div>
-                            <label htmlFor="title">Title</label>
+                            <label htmlFor="title">Title: </label>
                             <input
                                 type="text"
                                 id="title"
@@ -123,7 +123,7 @@ function EditIncidentPage() {
 
                         {/* Allow the user to update the incident description */}
                         <div>
-                            <label htmlFor="description">Description</label>
+                            <label htmlFor="description">Description: </label>
                             <textarea
                                 id="description"
                                 name="description"
@@ -134,7 +134,7 @@ function EditIncidentPage() {
 
                         {/* Allow the user to update the incident severity */}
                         <div>
-                            <label htmlFor="severity">Severity</label>
+                            <label htmlFor="severity">Severity: </label>
                             <select
                                 id="severity"
                                 name="severity"
@@ -150,7 +150,7 @@ function EditIncidentPage() {
 
                         {/* Allow the user to update the incident category */}
                         <div>
-                            <label htmlFor="category">Category</label>
+                            <label htmlFor="category">Category: </label>
                             <select
                                 id="category"
                                 name="category"
@@ -168,7 +168,7 @@ function EditIncidentPage() {
 
                         {/* Allow the user to update the incident status */}
                         <div>
-                            <label htmlFor="status">Status</label>
+                            <label htmlFor="status">Status: </label>
                             <select
                                 id="status"
                                 name="status"
@@ -184,7 +184,7 @@ function EditIncidentPage() {
 
                         {/* Allow the user to update the affected system */}
                         <div>
-                            <label htmlFor="affectedSystem">Affected System</label>
+                            <label htmlFor="affectedSystem">Affected System: </label>
                             <input
                                 type="text"
                                 id="affectedSystem"
@@ -196,7 +196,7 @@ function EditIncidentPage() {
 
                         {/* Allow the user to update who reported the incident */}
                         <div>
-                            <label htmlFor="reportedBy">Reported By</label>
+                            <label htmlFor="reportedBy">Reported By: </label>
                             <input
                                 type="text"
                                 id="reportedBy"
@@ -208,7 +208,7 @@ function EditIncidentPage() {
 
                         {/* Allow the user to update who is assigned to the incident */}
                         <div>
-                            <label htmlFor="assignedTo">Assigned To</label>
+                            <label htmlFor="assignedTo">Assigned To: </label>
                             <input
                                 type="text"
                                 id="assignedTo"
@@ -220,7 +220,7 @@ function EditIncidentPage() {
 
                         {/* Allow the user to update the resolution notes for the incident */}
                         <div>
-                            <label htmlFor="resolutionNotes">Resolution Notes</label>
+                            <label htmlFor="resolutionNotes">Resolution Notes: </label>
                             <textarea
                                 id="resolutionNotes"
                                 name="resolutionNotes"
