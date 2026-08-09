@@ -58,10 +58,15 @@ function CreateIncidentPage() {
         const reportBlob = new Blob([reportText], {
             type: "text/plain",
         });
+
+        // Create a temporary browser URL that points to the text file Blob
+        const reportUrl = URL.createObjectURL(reportBlob);
         
+
         // Displays the report text to test it before downloading a file
         console.log(reportText);
         console.log("Incident report Blob:", reportBlob);
+        console.log("Incident report URL:", reportUrl);
     };
 
     // Send the incident form to the backend API
