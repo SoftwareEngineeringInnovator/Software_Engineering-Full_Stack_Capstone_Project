@@ -11,6 +11,12 @@ function RegisterPage() {
         password: "",
     });
 
+    // Allow the application to redirect the user after successful registration
+    const navigate = useNavigate();
+
+    // Store an error message when registration is unsuccessful
+    const [registerError, setRegisterError] = useState("");
+
     // Update the matching registration field when the user changes an input
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -21,12 +27,39 @@ function RegisterPage() {
         });
     };
 
-    // Handle the registration form submission without refreshing the page
-    const handleSubmit = (event) => {
+    // Handle the registration form submission without refreshing the page, then sends the new user's information to the backend registration API
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
-        // Added console.log for testing purposes
-        console.log("Register form submitted:", formData);
+        // Clear any previous registration error before trying again
+        setRegisterError("");
+
+        try {
+            const response = await fetch("/api/auth/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            // Display the backend error message if registration is unsuccessful
+            if (!response.ok) {
+                setRegisterError(data.message);
+                return;
+            }
+
+            // Send the new user to the Login page after successful registration
+            navigate("/login");
+        } catch (error) {
+            console.error("Registration request failed:", error);
+
+            setRegisterError(
+                "Unable to register at this time. Please try again.",
+            );
+        }
     };
 
     return (
@@ -78,6 +111,9 @@ function RegisterPage() {
 
                 {/* Submit the new user's registration information */}
                 <button type="submit">Register</button>
+
+                {/* Show a registration error when the request is unsuccessful */}
+                {registerError && <p>{registerError}</p>}
             </form>
         </main>
     );
