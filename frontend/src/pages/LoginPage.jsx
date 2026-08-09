@@ -20,13 +20,41 @@ function LoginPage() {
     };
 
     // Added console.log for testing purposes
-    console.log("Login form state:", formData);
+    // console.log("Login form state:", formData);
 
-    // Handle the login form submission without refreshing the page
-    const handleSubmit = (event) => {
+    // Handle the login form submission without refreshing the page then sends the user's login credentials to the backend authentication API
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
-        console.log("Login form submitted:", formData);
+        try {
+            const response = await fetch("/api/auth/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            // Stop the login process if the backend rejects the credentials
+            if (!response.ok) {
+                console.log("Login failed:", data.message);
+                return;
+            }
+
+            // Store the authentication token so it can be used with protected API requests
+            localStorage.setItem("token", data.token);
+            
+            // Added console.log for testing purposes
+            // console.log("Login token stored successfully");
+            // console.log("Login response status:", response.status);
+            // console.log("Login message:", data.message);
+            // console.log("JWT received:", Boolean(data.token));
+
+        } catch (error) {
+            console.error("Login request failed:", error);
+        }
     };
 
     return (
@@ -82,8 +110,8 @@ function LoginPage() {
     );
 
     // Added console.log for testing porpuses
-    console.log("Current login email:", formData.email);
-    console.log("Current login password:", formData.password);
+    // console.log("Current login email:", formData.email);
+    // console.log("Current login password:", formData.password);
 }
 
 // Export the page so it can be used by React Router
