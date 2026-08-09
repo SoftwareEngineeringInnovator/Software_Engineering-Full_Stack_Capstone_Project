@@ -39,6 +39,26 @@ function CreateIncidentPage() {
     //     console.log("Incident form submitted:", formData);
     // };
 
+    // Create a text version of the incident information for download
+    const handleDownload = () => {
+        const reportText = `
+        Cybersecurity Incident Report
+        
+        Incident Title: ${formData.title}
+        Description: ${formData.description}
+        Severity: ${formData.severity}
+        Category: ${formData.category}
+        Status: ${formData.status}
+        Affected System: ${formData.affectedSystem}
+        Reported By: ${formData.reportedBy}
+        Assigned To: ${formData.assignedTo}
+        Resolution Notes: ${formData.resolutionNotes}
+        `;
+
+        // Displays the report text to test it before downloading a file
+        console.log(reportText);
+    };
+
     // Send the incident form to the backend API
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -233,7 +253,7 @@ function CreateIncidentPage() {
                     </button>
 
                     {/* Button allow the user to download the incident information as a text file */}
-                    <button type="button">
+                    <button type="button" onClick={handleDownload}>
                         Download Report
                     </button>
                 </div>
