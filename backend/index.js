@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 import express from "express";
 import connectDB from "./config/db.js";
 import incidentRoutes from "./routes/incidentRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
 
 // Load the environment variables from the .env file
 dotenv.config();
@@ -14,6 +15,9 @@ app.use(express.json());
 
 // Connect incident routes to Express application
 app.use("/api/incidents", incidentRoutes);
+
+// Connect the authentication routes to the Express application
+app.use("/api/auth", authRoutes);
 
 // Use the port variable from .env
 const PORT = process.env.PORT;
