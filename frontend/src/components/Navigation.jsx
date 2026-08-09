@@ -1,7 +1,20 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 // This component provides shared navigation links for the application
 function Navigation() {
+
+    // Allow the application to redirect the user after logging out
+    const navigate = useNavigate();
+
+    // Check whether an authentication token is currently stored
+    const token = localStorage.getItem("token");
+
+    // Remove the stored JWT and return the user to the Login page
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        navigate("/login");
+    };
+
     return (
         <nav>
             {/* Link to the Home page */}
@@ -13,11 +26,20 @@ function Navigation() {
             {/* Link to the page where users report the incident */}
             <Link to="/incidents/new">Report Incident</Link>
 
-            {/* Link to the Login page for registered users */}
-            <Link to="/login">Login</Link>
+            {/* Show Login and Register when the user is not authenticated */}
+            {!token && (
+                <>
+                    <Link to="/login">Login</Link>
+                    <Link to="/register">Register</Link>
+                </>
+            )}
 
-            {/* Link to the Register page for users */}
-            <Link to="/register">Register</Link>
+            {/* Allow an authenticated user to end their current session */}
+            {token && (
+                <button type="button" onClick={handleLogout}>
+                    Logout
+                </button>
+            )}
         </nav>
     );
 }
