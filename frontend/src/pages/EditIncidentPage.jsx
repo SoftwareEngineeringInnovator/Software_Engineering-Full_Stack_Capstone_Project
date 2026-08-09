@@ -228,6 +228,11 @@ function EditIncidentPage() {
                                 onChange={handleChange}
                             />
                         </div>
+
+                        {/* Button to submit the updated incident information */}
+                        <button type="submit">
+                            Update Incident
+                        </button>
                     </form>
                 </>
             )}
