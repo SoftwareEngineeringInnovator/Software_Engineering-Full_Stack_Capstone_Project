@@ -1,5 +1,6 @@
 import express from "express";
 import Incident from "../models/Incident.js";
+import authMiddleware from "../middleware/authMiddleware.js";
 
 // Create an Express router for incident-related routes
 const router = express.Router();
@@ -49,7 +50,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // POST route /api/incidents - create an incident in MongoDB
-router.post("/", async (req, res) => {
+router.post("/", authMiddleware, async (req, res) => {
     try {
         const newIncident = await Incident.create(req.body);
 
@@ -72,7 +73,7 @@ router.post("/", async (req, res) => {
 });
 
 // PUT route /api/incidents/:id - update incidents in MongoDB
-router.put("/:id", async (req, res) => {
+router.put("/:id", authMiddleware, async (req, res) => {
     try {
 
         const updatedIncident = await Incident.findByIdAndUpdate(
@@ -114,7 +115,7 @@ router.put("/:id", async (req, res) => {
 });
 
 // DELETE route /api/incidents/:id - delete an incident using its ID
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", authMiddleware, async (req, res) => {
     try {
         const deletedIncident = await Incident.findByIdAndDelete(req.params.id);
 
