@@ -22,6 +22,13 @@ function LoginPage() {
     // Added console.log for testing purposes
     console.log("Login form state:", formData);
 
+    // Handle the login form submission without refreshing the page
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        console.log("Login form submitted:", formData);
+    };
+
     return (
         <main>
             {/* Page heading for user authentication */}
@@ -29,7 +36,7 @@ function LoginPage() {
 
             <p>Log in to access the Cybersecurity Incident Tracker.</p>
 
-            <form>
+            <form onSubmit={handleSubmit}>
                 {/* Allow the user to enter the email associated with their account */}
                 <div>
                     <label htmlFor="email">Email: </label>
