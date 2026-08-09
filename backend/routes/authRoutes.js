@@ -2,6 +2,7 @@ import express from "express";
 import User from "../models/User.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import authMiddleware from "../middleware/authMiddleware.js";
 
 // Create a router for authentication
 const router = express.Router();
@@ -100,6 +101,14 @@ router.post("/login", async (req, res) => {
             message: "Unable to log in",
         });
     }
+});
+
+// Test that only authenticated users can access the protected route
+router.get("/protected", authMiddleware, (req, res) => {
+  res.status(200).json({
+    message: "Protected route accessed successfully",
+    userId: req.userId,
+  });
 });
 
 // Export the router so it can be connected to the Express application
