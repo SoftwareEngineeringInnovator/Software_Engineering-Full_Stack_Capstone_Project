@@ -16,10 +16,19 @@ function EditIncidentPage() {
     // Store an error message if the incident cannot be retrieved
     const [error, setError] = useState("");
 
+    // Store a success message after the incident is updated
+    const [updateSuccess, setUpdateSuccess] = useState("");
+
+    // Store an error message if the incident update fails
+    const [updateError, setUpdateError] = useState("");
+
     // Added console.log for testing purposes
     // console.log("Incident state:", incident);
     // console.log("Loading state:", loading);
     // console.log("Error state is empty:", error === "");
+    console.log("Update success state:", updateSuccess);
+    console.log("Update error state:", updateError);
+
 
     // Store the values that will be displayed and updated in the edit form
     const [formData, setFormData] = useState({
