@@ -41,8 +41,7 @@ function CreateIncidentPage() {
 
     // Create a text version of the incident information for download
     const handleDownload = () => {
-        const reportText = `
-        Cybersecurity Incident Report
+        const reportText = `Cybersecurity Incident Report
         
         Incident Title: ${formData.title}
         Description: ${formData.description}
@@ -55,8 +54,14 @@ function CreateIncidentPage() {
         Resolution Notes: ${formData.resolutionNotes}
         `;
 
+        // Create a text file using the incident report information
+        const reportBlob = new Blob([reportText], {
+            type: "text/plain",
+        });
+        
         // Displays the report text to test it before downloading a file
         console.log(reportText);
+        console.log("Incident report Blob:", reportBlob);
     };
 
     // Send the incident form to the backend API
