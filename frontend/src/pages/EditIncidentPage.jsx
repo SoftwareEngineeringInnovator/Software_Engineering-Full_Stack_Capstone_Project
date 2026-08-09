@@ -181,6 +181,18 @@ function EditIncidentPage() {
                                 <option value="Resolved">Resolved</option>
                             </select>
                         </div>
+
+                        {/* Allow the user to update the affected system */}
+                        <div>
+                            <label htmlFor="affectedSystem">Affected System</label>
+                            <input
+                                type="text"
+                                id="affectedSystem"
+                                name="affectedSystem"
+                                value={formData.affectedSystem}
+                                onChange={handleChange}
+                            />
+                        </div>
                     </form>
                 </>
             )}
@@ -207,6 +219,7 @@ function EditIncidentPage() {
     console.log("Current edit severity:", formData.severity);
     console.log("Current edit category:", formData.category);
     console.log("Current edit status:", formData.status);
+    console.log("Current affected system:", formData.affectedSystem);
 }
 
 
