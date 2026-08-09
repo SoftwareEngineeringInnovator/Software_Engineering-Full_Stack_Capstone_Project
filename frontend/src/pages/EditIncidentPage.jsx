@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { useEffect, useState } from "react";
 
 // This page will allow users to update an existing cybersecurity incident
@@ -6,6 +6,9 @@ function EditIncidentPage() {
 
     // Read the incident ID from the route in the URL
     const { id } = useParams();
+
+    // Allow the application to redirect the user to the Incident page
+    const navigate = useNavigate();
 
     // Store the incident returned by the backend API
     const [incident, setIncident] = useState(null);
@@ -83,6 +86,9 @@ function EditIncidentPage() {
 
             // Clear any previous update error
             setUpdateError("");
+
+            // Return the user to the Incident page after a successful update
+            navigate(`/incidents/${id}`);
 
         } catch (error) {
 
