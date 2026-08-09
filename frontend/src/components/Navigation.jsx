@@ -24,7 +24,7 @@ function Navigation() {
             <Link to="/incidents">Incidents</Link>
 
             {/* Link to the page where users report the incident */}
-            <Link to="/incidents/new">Report Incident</Link>
+            {token && <Link to="/incidents/new">Report Incident</Link>}
 
             {/* Show Login and Register when the user is not authenticated */}
             {!token && (
