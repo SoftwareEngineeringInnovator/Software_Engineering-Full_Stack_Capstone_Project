@@ -29,6 +29,9 @@ function IncidentDetailsPage() {
         try {
             const response = await fetch(`/api/incidents/${id}`, {
                 method: "DELETE",
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
             });
 
             if (!response.ok) {
