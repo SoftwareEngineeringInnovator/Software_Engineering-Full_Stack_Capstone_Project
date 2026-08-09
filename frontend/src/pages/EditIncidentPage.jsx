@@ -77,11 +77,27 @@ function EditIncidentPage() {
             const data = await response.json();
 
             console.log("Updated incident returned by API:", data);
+
+            // Let the user know that the incident was updated successfully
+            setUpdateSuccess("Incident updated successfully.");
+
+            // Clear any previous update error
+            setUpdateError("");
+
         } catch (error) {
+
+            // Store the update error to be shown to the user
+            setUpdateError(error.message);
+
+            // Clear any previous success message
+            setUpdateSuccess("");
+
             console.error("Error updating incident:", error.message);
         }
         // Displays the edited form data - console.log for testing porpuses
         console.log("Updated incident form submitted:", formData);
+        console.log("Update success:", updateSuccess);
+        console.log("Update error:", updateError);
     };
 
     // Retrieve the selected incident
