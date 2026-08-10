@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 // This page will display details of the cybersecurity incidents
 function IncidentDetailsPage() {
 
+    // Check whether the user is currently authenticated
+    const token = localStorage.getItem("token");
+
     // Read the incident ID from the dynamic route in the browser URL
     const { id } = useParams();
 
@@ -88,7 +91,9 @@ function IncidentDetailsPage() {
             {/* Display the incident title to confirm the API request works */}
             {!loading && !error && incident && (
                 <>
-                    <p>This page will display the details of a selected cybersecurity incident by ID.</p>
+                    <h3>This page will display the details of a selected cybersecurity incident by ID.</h3>
+                    <p>Please Register and Login if you want to Edit or Delete the Incident</p>
+                    <br></br>
                     <p>Incident Title: {incident.title}</p>
                     <p>Description: {incident.description}</p>
                     <p>Severity: {incident.severity}</p>
@@ -101,19 +106,21 @@ function IncidentDetailsPage() {
                 </>
             )}
 
-            <div className="incident-actions">
-                {/* Button that will allow the user to delete an incident */}
-                <button type="button" onClick={handleDelete}>
-                    Delete Incident
-                </button>
-
-                {/* Button that will allow the user to edit an incident */}
-                <Link to={`/incidents/${id}/edit`}>
-                    <button type="button">
-                        Edit Incident
+            {/* Only authenticated users can edit or delete incidents */}
+            {token && (
+                <div className="incident-actions">
+                    {/* Button that will allow the user to delete an incident */}
+                    <button type="button" onClick={handleDelete}>
+                        Delete Incident
                     </button>
-                </Link>
-            </div>
+
+                    {/* Button that will allow the user to edit an incident */}
+                    <Link to={`/incidents/${id}/edit`}>
+                        <button type="button">
+                            Edit Incident
+                        </button>
+                    </Link>
+                </div>)}
         </main>
     );
 }
