@@ -74,7 +74,7 @@ function LoginPage() {
         <main>
             {/* Page heading for user authentication */}
             <h1>Login</h1>
-
+            <br></br>
             <p>Log in to access the Cybersecurity Incident Tracker.</p>
 
             <form onSubmit={handleSubmit}>

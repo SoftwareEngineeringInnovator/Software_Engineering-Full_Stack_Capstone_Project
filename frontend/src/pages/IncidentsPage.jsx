@@ -49,7 +49,7 @@ function IncidentsPage() {
             )}
 
             {incidents.map((incident) => (
-                <article key={incident._id}>
+                <div className="incident-card" key={incident._id}>
 
                     {/* Add link to the Incidents so it can be clicked for full display */}
                     <h2>
@@ -60,7 +60,7 @@ function IncidentsPage() {
                     <p>{incident.description}</p>
                     <p>Severity: {incident.severity}</p>
                     <p>Status: {incident.status}</p>
-                </article>
+                </div>
             ))}
         </main>
     );

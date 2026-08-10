@@ -67,6 +67,8 @@ function RegisterPage() {
             {/* Page heading for new user registration */}
             <h1>Register</h1>
 
+            <br></br>
+
             <p>Create an account to access the Cybersecurity Incident Tracker.</p>
 
             <form onSubmit={handleSubmit}>

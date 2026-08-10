@@ -1,13 +1,133 @@
-/* Style the navigation links */
-nav {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
+/* Gives style to the main section */
+main {
+  width: min(900px, 90%);
+  margin: 0 auto;
+  padding: 30px 20px 60px;
 }
 
-/* Use Flexbox to center the incident action buttons and add space between them */
+/* Gives style to h1 elements */
+h1 {
+  margin-bottom: 15px;
+  font-size: 48px;
+  line-height: 1.1;
+}
+
+/* Gives style to p elements */
+p {
+  line-height: 1.6;
+}
+
+/* Gives style to the navigation section */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+/* Gives style to the navigation links */
+nav a {
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Adds an underline when the mouse is over a navigation link */
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Gives style to the Logout button in the navigation */
+nav button {
+  padding: 7px 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Gives style to the forms */
+form {
+  width: min(500px, 100%);
+  margin: 25px auto;
+  padding: 25px;
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+
+/* Adds space between the sections inside a form */
+form > div {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* Gives style to the labels inside a form */
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+/* Gives the same style to inputs, select menus, and text areas */
+form input, form select, form textarea {
+  width: 100%;
+  padding: 9px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Gives more space to text areas */
+form textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* Gives style to the buttons */
+button {
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Gives style to the incident action buttons */
 .incident-actions {
   display: flex;
-  gap: 20px;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Gives style to links inside the main section */
+main a {
+  font-weight: 600;
+}
+
+/* Controls the width and spacing of paragraphs inside the main section */
+main p {
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Gives style to each incident card */
+.incident-card {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid darkgray;
+  border-radius: 8px;
+}
+
+/* Gives space to the incident title */
+.incident-card h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* Gives space to the information inside each incident card */
+.incident-card p {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
